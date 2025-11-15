@@ -27,6 +27,6 @@ export const registrarSalida = async (
 
 // OBTENER ASISTENCIAS
 export const obtenerAsistencias = async (): Promise<AsistenciaResponseDTO[]> => {
-  const response = await api.get<AsistenciaResponseDTO[]>("Asistencia/obtenerAsistencia");
+  const response = await api.get<AsistenciaResponseDTO[]>("/Asistencia/obtenerAsistencia");
   return response.data;
 };
