@@ -3,6 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
 import type { SubmitHandler, Resolver } from "react-hook-form";
 import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 import {
   Container,
   Box,
