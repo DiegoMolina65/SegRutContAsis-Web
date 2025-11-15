@@ -1,7 +1,7 @@
 import * as React from "react";
 import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { FormHelperText, FormControl } from "@mui/material";
-import dayjs, { Dayjs } from "dayjs";
+import  { Dayjs } from "dayjs";
 
 interface TimePickerCustomProps {
   label?: string;

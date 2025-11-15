@@ -58,6 +58,6 @@ export const useUsuariosData = () => {
     usuarios,
     loading,
     error,
-    refetch: fetchAllData, // Exponemos una función para recargar todos los datos
+    refetch: fetchAllData, 
   };
 };

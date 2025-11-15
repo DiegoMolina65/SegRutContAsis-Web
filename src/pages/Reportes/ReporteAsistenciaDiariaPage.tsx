@@ -55,7 +55,7 @@ const schema = yup.object().shape({
 
 
 const ReporteAsistenciaDiariaPage = () => {
-  const { supervisores, vendedores } = useUsuariosData();
+  const { vendedores } = useUsuariosData();
   const { generarAsistenciaDiaria, loading } = useReportesActividad();
 
   const [snackbar, setSnackbar] = useState<{

@@ -4,8 +4,6 @@ import type {
   UsuarioRegistroRequestDTO, 
   UsuarioResponseDTO, 
   UsuarioInfoDTO,
-  SupervisoresResponseDTO,
-  VendedoresResponseDTO
 } from "../../types/exportTypes";
 
 // LOGIN
@@ -27,7 +25,11 @@ export const loginUsuario = async (usuarioData: UsuarioRequestDTO): Promise<Usua
     usrEstadoDel: data.usrEstadoDel ?? data.usrEstadoDel,
     roles: data.roles ?? data.roles ?? [],
     vendedorId: data.vendedorId ?? data.vendedorId,
-    supervisorId: data.supervisorId ?? data.supervisorId
+    supervisorId: data.supervisorId ?? data.supervisorId,
+
+      esAdministrador: data.esAdministrador ?? false,
+  esVendedor: data.esVendedor ?? false,
+  esSupervisor: data.esSupervisor ?? false,
   };
 
   if (usuarioNormalizado.token) {
@@ -78,14 +80,14 @@ export const logoutUsuario = async (): Promise<{ mensaje: string }> => {
 };
 
 // OBTENER VENDEDORES
-export const obtenerVendedores = async (): Promise<VendedoresResponseDTO[]> => {
-  const response = await api.get<VendedoresResponseDTO[]>("/Usuario/obtenerVendedores");
+export const obtenerVendedores = async (): Promise<UsuarioResponseDTO[]> => {
+  const response = await api.get<UsuarioResponseDTO[]>("/Usuario/obtenerVendedores");
   return response.data;
 };
 
 // OBTENER SUPERVISORES
-export const obtenerSupervisores = async (): Promise<SupervisoresResponseDTO[]> => {
-  const response = await api.get<SupervisoresResponseDTO[]>("/Usuario/obtenerSupervisores");
+export const obtenerSupervisores = async (): Promise<UsuarioResponseDTO[]> => {
+  const response = await api.get<UsuarioResponseDTO[]>("/Usuario/obtenerSupervisores");
   return response.data;
 };
 

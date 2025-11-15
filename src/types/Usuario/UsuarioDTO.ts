@@ -41,23 +41,3 @@ export interface UsuarioInfoDTO {
   usrNombreCompleto: string;
   usrUsuarioLog: string;
 }
-
-/*
-// response obtenerVendedores
-export interface VendedoresResponseDTO {
-  usrId: number;
-  usrNombreCompleto: string;
-  usrCorreo: string;
-  roles: string[];
-  idVendedor: number;
-}
-
-// responde obtenerSupervisores
-export interface SupervisoresResponseDTO {
-  usrId: number;
-  usrNombreCompleto: string;
-  usrCorreo: string;
-  roles: string[];
-  idSupervisor: number;
-}
-  */

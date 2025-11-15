@@ -53,7 +53,7 @@ const schema = yup.object().shape({
 });
 
 const ReporteControlCampoPage = () => {
-  const { supervisores, vendedores } = useUsuariosData();
+  const { vendedores } = useUsuariosData();
   const { generarControlCampo, loading } = useReportesActividad();
 
   const [snackbar, setSnackbar] = useState<{
