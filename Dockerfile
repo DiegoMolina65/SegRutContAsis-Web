@@ -1,19 +1,25 @@
-# IMAGEN
+# Imagen base
 FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package.json .
+# Copiamos dependencias primero (mejor cache)
+COPY package.json package-lock.json ./
 
-RUN npm install
+# Instalamos dependencias
+RUN npm ci
 
-RUN npm i -g serve
+# Instalamos "serve" global
+RUN npm install -g serve
 
+# Copiamos el resto del código
 COPY . .
 
+# Build de producción
 RUN npm run build
 
-# PUERTO 
+# Exponemos el puerto
 EXPOSE 3000
 
+# Comando para servir la carpeta dist
 CMD ["serve", "-s", "dist", "-l", "3000"]
